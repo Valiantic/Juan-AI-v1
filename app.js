@@ -51,12 +51,55 @@ btn.addEventListener('click', ()=> {            //click method
 
 function takeCommand(message){  // conversational modules
     if(message.includes('hello') || message.includes('hi')){
-        speak("Kumusta! I'm juan, An artificial intelligence virtual assistant. How can i help you?")
+        speak("Kumusta! ")
     }
-    if(message.includes('who created you')){
+    else if(message.includes('who created you')){
         speak("I was created by an inspiring computer scientist. steven madali, a student taking a bachelors degree in information technology currently on cavite state university carmona campus")
     }
-    else{
-        speak("I didn't quite hear that, could you please repeat it?")
+    else if(message.includes("open google")){
+        window.open("https://google.com", " blank");
+        speak("Opening Google...")
+    }
+    else if(message.includes("open facebook")){
+        window.open("https://facebook.com", " blank");
+        speak("Opening Facebook...")
+    }
+    else if(message.includes("open youtube")){
+        window.open("https://youtube.com", " blank");
+        speak("Opening Youtube...")
+    }
+    else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
+        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
+        const finalText = "This is what i found on internet regarding " + message;
+	    speak(finalText);
+  
+    }
+    else if(message.includes('wikipedia')) {
+        window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
+        const finalText = "This is what i found on wikipedia regarding " + message;
+        speak(finalText);
+    }
+    else if(message.includes('time')) {
+        const time = new Date().toLocaleString(undefined, {hour: "numeric", minute: "numeric"})
+        const finalText = time;
+        speak(finalText);
+    }
+
+    else if(message.includes('date')) {
+        const date = new Date().toLocaleString(undefined, {month: "short", day: "numeric"})
+        const finalText = date;
+        speak(finalText);
+    }
+
+    else if(message.includes('calculator')) {
+        window.open('Calculator:///')
+        const finalText = "Opening Calculator";
+        speak(finalText);
+    }
+
+    else {
+        window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
+        const finalText = "I didn't quite understand or my knowledge about what you said is limited. but i try looking for" + message + "on google";
+        speak(finalText);
     }
 }
