@@ -51,7 +51,16 @@ btn.addEventListener('click', ()=> {            //click method
 
 function takeCommand(message){  // conversational modules
     if(message.includes('hello') || message.includes('hi')){
-        speak("Kumusta! ")
+        speak("Kumusta! i'm juan, an artificial intelligence virtual assistant. how are you?")
+    }
+    else if(message.includes("i'm fine")  || message.includes('ok lang') || message.includes('okay lang')){
+        speak("Good to hear that! just a friendly reminder that never push yourself too far and have a rest!")
+    }
+    else if(message.includes("kumusta")  || message.includes('kamusta')){
+        speak("Thank you for asking. I'm fine as wine, i'm exploring the internet domain these days. how about you? how's life lately?")
+    }
+    else if(message.includes("tired")  || message.includes('pagod')){
+        speak("I understand what you felt, it must been really hard for you these days. i really wish i could do something for you to make you better. but i hope you overcome it. the sun will rise again for those people who have the courage to try again")
     }
     else if(message.includes('who created you')){
         speak("I was created by an inspiring computer scientist. steven madali, a student taking a bachelors degree in information technology currently on cavite state university carmona campus")
@@ -68,16 +77,25 @@ function takeCommand(message){  // conversational modules
         window.open("https://youtube.com", " blank");
         speak("Opening Youtube...")
     }
+    else if(message.includes("open instagram")){
+        window.open("https://instagram.com", " blank");
+        speak("Opening Youtube...")
+    }
     else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is what i found on internet regarding " + message;
 	    speak(finalText);
-  
     }
     else if(message.includes('wikipedia')) {
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
         const finalText = "This is what i found on wikipedia regarding " + message;
         speak(finalText);
+    }
+    else if(message.includes('related literature about') || message.includes('rrl about')) {
+        window.open(`https://eric.ed.gov/?q=${message.replace(" ", "+")}`, "_blank");
+        const finalText = "This is the related literature i found about" + message;
+	    speak(finalText);
+  
     }
     else if(message.includes('time')) {
         const time = new Date().toLocaleString(undefined, {hour: "numeric", minute: "numeric"})
@@ -99,7 +117,7 @@ function takeCommand(message){  // conversational modules
 
     else {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "I didn't quite understand or my knowledge about what you said is limited. but i try looking for" + message + "on google";
+        const finalText = "I'm sorry, i didn't quite understand that or my knowledge about what you said is limited. but i try looking for" + message + "on google";
         speak(finalText);
     }
 }
