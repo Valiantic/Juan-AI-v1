@@ -121,6 +121,14 @@ function takeCommand(message){  // conversational modules
         speak(finalText);
     }
 
+    
+    //weather
+    else if(message.includes('weather') || message.includes('panahon')) {
+        window.open('https://zoom.earth/maps/satellite/#view=11.48,124.06,5z/date=2024-02-28,16:00,+8');
+        const finalText = "Ok, This is the weather forecast based on zoom.earth satellite view"; 
+	    speak(finalText);
+    }
+
     //open apps
     else if(message.includes('calculator')) {
         window.open('Calculator:///')
