@@ -1,0 +1,15 @@
+body{
+    margin:0;
+    padding: 0;
+    width: 100w;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+canvas{
+    position: absolute;
+    
+}
