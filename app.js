@@ -97,25 +97,25 @@ function takeCommand(message){  // conversational modules
     // search through eric about related literature
     else if(message.includes('related literature about') || message.includes('rrl about')) {
         window.open(`https://eric.ed.gov/?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "This is the related literature i found about" + message;
+        const finalText = "This is the related literature i found about" + message + "in eric";
 	    speak(finalText);
     }
     // search through eric about related studies
-     else if(message.includes('related literature about') || message.includes('rrl about')) {
+     else if(message.includes('related studies about') || message.includes('rrs about')) {
         window.open(`https://eric.ed.gov/?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "This is the related literature i found about" + message;
+        const finalText = "This is the related studies i found about" + message + "in eric"; 
 	    speak(finalText);
     }
 
     // time 
-    else if(message.includes('time')) {
+    else if(message.includes('time') || message.includes('oras')) {
         const time = new Date().toLocaleString(undefined, {hour: "numeric", minute: "numeric"})
         const finalText = time;
         speak(finalText);
     }
 
     //date
-    else if(message.includes('date')) {
+    else if(message.includes('date') || message.includes('petsa')) {
         const date = new Date().toLocaleString(undefined, {month: "short", day: "numeric"})
         const finalText = date;
         speak(finalText);
