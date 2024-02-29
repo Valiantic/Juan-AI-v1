@@ -6,7 +6,7 @@ function speak(text){
     //variable speechsynthesis
     const text_speak = new SpeechSynthesisUtterance(text);
     text_speak.rate = 1;
-    text_speak.volume = 1;
+    text_speak.volume = 5;
     text_speak.pitch = 1;
 
     window.speechSynthesis.speak(text_speak) //passing the speechsynthesis
@@ -94,6 +94,12 @@ function takeCommand(message){  // conversational modules
         const finalText = "This is what i found on wikipedia regarding " + message;
         speak(finalText);
     }
+    //weather
+    else if(message.includes('weather') || message.includes('panahon')) {
+            window.open('https://zoom.earth/maps/satellite/#view=11.48,124.06,5z/date=2024-02-28,16:00,+8');
+            const finalText = "Ok, This is the weather forecast based on zoom.earth satellite view"; 
+            speak(finalText);
+    }
     // search through eric about related literature
     else if(message.includes('related literature about') || message.includes('rrl about')) {
         window.open(`https://eric.ed.gov/?q=${message.replace(" ", "+")}`, "_blank");
@@ -104,6 +110,13 @@ function takeCommand(message){  // conversational modules
      else if(message.includes('related studies about') || message.includes('rrs about')) {
         window.open(`https://eric.ed.gov/?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is the related studies i found about" + message + "in eric"; 
+	    speak(finalText);
+    }
+
+    // scan me 
+    else if(message.includes('scan me')) {
+        window.open('/scan.html' , '_blank');
+        const finalText = "scanning"; 
 	    speak(finalText);
     }
 
@@ -119,14 +132,6 @@ function takeCommand(message){  // conversational modules
         const date = new Date().toLocaleString(undefined, {month: "short", day: "numeric"})
         const finalText = date;
         speak(finalText);
-    }
-
-    
-    //weather
-    else if(message.includes('weather') || message.includes('panahon')) {
-        window.open('https://zoom.earth/maps/satellite/#view=11.48,124.06,5z/date=2024-02-28,16:00,+8');
-        const finalText = "Ok, This is the weather forecast based on zoom.earth satellite view"; 
-	    speak(finalText);
     }
 
     //open apps
