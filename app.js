@@ -100,6 +100,18 @@ function takeCommand(message){  // conversational modules
         window.open("https://instagram.com", " blank");
         speak("Opening Youtube...")
     }
+    else if(message.includes("open meet")){
+        window.open("https://meet.google.com", " blank");
+        speak("Opening Google meet")
+    }
+    else if(message.includes("open discord")){
+        window.open("https://discord.com/channels/@me", " blank");
+        speak("Opening Discord")
+    }
+    else if(message.includes("open twitter")){
+        window.open("https://twitter.com/home", " blank");
+        speak("Opening Twitter")
+    }
     // search through google
     else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
