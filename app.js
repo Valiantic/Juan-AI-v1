@@ -151,7 +151,28 @@ function takeCommand(message){  // conversational modules
     else if(message.includes('scan me')) {
         window.open('/scan.html' , '_blank');
         const finalText = "scanning"; 
-	    speak(finalText);
+	    setTimeout(speak(finalText), 7000);
+        speak("Scan complete")
+
+        const sentences = [
+            "You are happy",
+            "You are sad",
+            "You are angry",
+            "You are neutral"
+          ];
+          
+          // Function to get a random index from the array
+          function getRandomIndex(array) {
+            return Math.floor(Math.random() * array.length);
+          }
+          
+          // Get a random sentence index
+          const randomIndex = getRandomIndex(sentences);
+          
+        // Print the randomly chosen sentence
+        //   console.log(sentences[randomIndex]);
+        //   speak(sentences[randomIndex])
+          setTimeout( speak(sentences[randomIndex]), 4000)
     }
 
     // time 
