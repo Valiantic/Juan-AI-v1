@@ -60,7 +60,25 @@ function takeCommand(message){  // conversational modules
         speak("Thank you for asking. I'm fine as wine, i'm exploring the internet domain these days. how about you? how's life lately?")
     }
     else if(message.includes("tired")  || message.includes('pagod')){ // pagod nako
-        speak("I understand what you felt, it must been really hard for you these days. i really wish i could do something for you to make you better. but i hope you overcome it. the sun will rise again for those people who have the courage to try again")
+        const sentences = [
+            "It's okay to feel tired. Everyone experiences it sometimes. Take a moment to rest and recharge",
+            "Think about the progress you've already made. Remember how far you've come.",
+            "Feeling overwhelmed can be draining. Divide your work into smaller, manageable steps, and tackle them one at a time.",
+            "Every accomplishment, no matter how small, is worth celebrating. Acknowledge your progress and reward yourself for your efforts",
+            "A well-rested and cared-for body and mind are essential for staying motivated. Make sure to get enough sleep, eat healthy foods, and engage in activities that bring you joy."
+          ];
+          
+          // Function to get a random index from the array
+          function getRandomIndex(array) {
+            return Math.floor(Math.random() * array.length);
+          }
+          
+          // Get a random sentence index
+          const randomIndex = getRandomIndex(sentences);
+          
+          // Print the randomly chosen sentence
+        //   console.log(sentences[randomIndex]);
+          speak(sentences[randomIndex])
     }
     else if(message.includes('who created you')){ // who created you?
         speak("I was created by an inspiring computer scientist. steven madali, a student taking a bachelors degree in information technology currently on cavite state university carmona campus")
