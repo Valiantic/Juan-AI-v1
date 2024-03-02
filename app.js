@@ -112,6 +112,10 @@ function takeCommand(message){  // conversational modules
         window.open("https://twitter.com/home", " blank");
         speak("Opening Twitter")
     }
+    else if(message.includes("open g class")){
+        window.open("https://classroom.google.com", " blank");
+        speak("Opening Google classroom")
+    }
     // search through google
     else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
