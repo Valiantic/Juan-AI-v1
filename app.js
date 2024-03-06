@@ -50,8 +50,24 @@ btn.addEventListener('click', ()=> {            //click method
 })
 
 function takeCommand(message){  // conversational modules
-    if(message.includes('hello') || message.includes('hi')){ // hi or hello
-        speak("Kumusta! i'm juan, an artificial intelligence virtual assistant. how are you?")
+    if(message.includes('hello') || message.includes('hi') || message.includes('hoy') || message.includes('huy')){ // hi or hello
+        const greetings = [
+           "hello kumusta, i'm juan. an artificial intelligence web-based assistant. how can i help you?",
+           "hello, rin",
+           "what's up"
+          ];
+          
+          // Function to get a random index from the array
+          function getRandomIndex(array) {
+            return Math.floor(Math.random() * array.length);
+          }
+          
+          // Get a random sentence index
+          const randomIndex = getRandomIndex(greetings);
+          
+          // Print the randomly chosen sentence
+        //   console.log(sentences[randomIndex]);
+          speak(greetings[randomIndex])
     }
     else if(message.includes("i'm fine")  || message.includes('ok lang') || message.includes('okay lang')){ // ok lang
         speak("Good to hear that! just a friendly reminder that never push yourself too far and have a rest!")
