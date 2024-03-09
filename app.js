@@ -17,14 +17,17 @@ function wishMe(){
     var hour = day.getHours();
 
     if(hour>=0 && hour<12){
-        speak("Magandang Umaga sainyo!")
+        speak("Magandang Umaga Sainyo!")
     }
-    if(hour>=0 && hour<12){                 // greetings 
-        speak("Magandang Tanghali sainyo!")
+
+    else if(hour>12 && hour<17){
+        speak("Magandang Tanghali Sainyo!")
     }
-    if(hour>=0 && hour<12){
-        speak("Magandang Gabi sainyo!")
+
+    else{
+        speak("Magandang Gabi Sainyo!")
     }
+
 }
 
 window.addEventListener('load', ()=>{
@@ -49,12 +52,15 @@ btn.addEventListener('click', ()=> {            //click method
     recongition.start();
 })
 
-function takeCommand(message){  // conversational modules
+
+// >> CONVERSATIONAL MODULES <<  !! NOTE ALL MESSAGE INCLUDES MUST BE SMALL LETTERS !!
+function takeCommand(message){  
     if(message.includes('hello') || message.includes('hi') || message.includes('hoy') || message.includes('huy')){ // hi or hello
         const greetings = [
-           "hello kumusta, i'm juan. an artificial intelligence web-based assistant. how can i help you?",
-           "hello, rin",
-           "what's up"
+           "Hello kumusta, i'm juan. an artificial intelligence web-based assistant. how can i help you?",
+           "Hi i'm juan, how can i be a help to you?",
+           "Kumusta! i'm juan, what can i do to help you?",
+           "Magandang araw! I'm juan. how can i help you?"
           ];
           
           // Function to get a random index from the array
@@ -69,37 +75,12 @@ function takeCommand(message){  // conversational modules
         //   console.log(sentences[randomIndex]);
           speak(greetings[randomIndex])
     }
-    else if(message.includes("i'm fine")  || message.includes('ok lang') || message.includes('okay lang')){ // ok lang
+    else if(message.includes("i'm fine")  || message.includes("ok lang") || message.includes("okay lang") || message.includes("i'm good")){ // ok lang
         speak("Good to hear that! just a friendly reminder that never push yourself too far and have a rest!")
     }
-    else if(message.includes("kumusta")  || message.includes('kamusta')){ // kumusta
-        speak("Thank you for asking. I'm fine as wine, i'm exploring the internet domain these days. how about you? how's life lately?")
-    }
-    else if(message.includes("tired")  || message.includes('pagod')){ // pagod nako
-        const sentences = [
-            "It's okay to feel tired. Everyone experiences it sometimes. Take a moment to rest and recharge",
-            "Think about the progress you've already made. Remember how far you've come.",
-            "Feeling overwhelmed can be draining. Divide your work into smaller, manageable steps, and tackle them one at a time.",
-            "Every accomplishment, no matter how small, is worth celebrating. Acknowledge your progress and reward yourself for your efforts",
-            "A well-rested and cared-for body and mind are essential for staying motivated. Make sure to get enough sleep, eat healthy foods, and engage in activities that bring you joy."
-          ];
-          
-          // Function to get a random index from the array
-          function getRandomIndex(array) {
-            return Math.floor(Math.random() * array.length);
-          }
-          
-          // Get a random sentence index
-          const randomIndex = getRandomIndex(sentences);
-          
-          // Print the randomly chosen sentence
-        //   console.log(sentences[randomIndex]);
-          speak(sentences[randomIndex])
-    }
-    else if(message.includes('who created you')){ // who created you?
-        speak("I was created by an inspiring computer scientist. steven madali, a student taking a bachelors degree in information technology currently on cavite state university carmona campus")
-    }
-    // open websites
+
+
+    // >> OPEN WEBSITES <<
     else if(message.includes("open google")){
         window.open("https://google.com", " blank");
         speak("Opening Google...")
@@ -132,12 +113,31 @@ function takeCommand(message){  // conversational modules
         window.open("https://classroom.google.com", " blank");
         speak("Opening Google classroom")
     }
-    // search through google
-    else if(message.includes('what is') || message.includes('who is') || message.includes('what are')) {
+    else if(message.includes("chat gpt")){
+        window.open("https://chat.openai.com", " blank");
+        speak("Opening Chatgpt")
+    }
+    else if(message.includes("lazada")){
+        window.open("https://www.lazada.com.ph/", " blank");
+        speak("Opening Lazada")
+    }
+    else if(message.includes("pinterest")){
+        window.open("https://www.pinterest.ph/", " blank");
+        speak("Opening Pinterest")
+    }
+    else if(message.includes("canva")){
+        window.open("https://www.canva.com/", " blank");
+        speak("Opening Canva")
+    }
+
+
+    // >> SEARCH THRU CHROME <<
+    else if(message.includes('what is') || message.includes('who is') || message.includes('what are') || message.includes('sino')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is what i found on internet regarding " + message;
 	    speak(finalText);
     }
+
     // search through wikipedia
     else if(message.includes('wikipedia')) {
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
@@ -191,14 +191,14 @@ function takeCommand(message){  // conversational modules
           setTimeout( speak(sentences[randomIndex]), 4000)
     }
 
-    // time 
+    // >> TIME <<
     else if(message.includes('time') || message.includes('oras')) {
         const time = new Date().toLocaleString(undefined, {hour: "numeric", minute: "numeric"})
         const finalText = time;
         speak(finalText);
     }
 
-    //date
+    // >> DATE <<
     else if(message.includes('date') || message.includes('petsa')) {
         const date = new Date().toLocaleString(undefined, {month: "short", day: "numeric"})
         const finalText = date;
