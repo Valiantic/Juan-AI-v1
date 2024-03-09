@@ -113,19 +113,19 @@ function takeCommand(message){
         window.open("https://classroom.google.com", " blank");
         speak("Opening Google classroom")
     }
-    else if(message.includes("chat gpt")){
+    else if(message.includes("open chat gpt")){
         window.open("https://chat.openai.com", " blank");
         speak("Opening Chatgpt")
     }
-    else if(message.includes("lazada")){
+    else if(message.includes("open lazada")){
         window.open("https://www.lazada.com.ph/", " blank");
         speak("Opening Lazada")
     }
-    else if(message.includes("pinterest")){
+    else if(message.includes("open pinterest")){
         window.open("https://www.pinterest.ph/", " blank");
         speak("Opening Pinterest")
     }
-    else if(message.includes("canva")){
+    else if(message.includes("open canva")){
         window.open("https://www.canva.com/", " blank");
         speak("Opening Canva")
     }
@@ -138,7 +138,7 @@ function takeCommand(message){
 	    speak(finalText);
     }
 
-    // search through wikipedia
+    // >> SEARCH THRU WIKIPEDIA <<
     else if(message.includes('wikipedia')) {
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
         const finalText = "This is what i found on wikipedia regarding " + message;
@@ -150,14 +150,16 @@ function takeCommand(message){
             const finalText = "Ok, This is the weather forecast based on zoom.earth satellite view"; 
             speak(finalText);
     }
-    // search through eric about related literature
-    else if(message.includes('related literature about') || message.includes('rrl about')) {
+
+    // >> SEARCH THROUGH ERIC ABOUT LITERATED LITERATURE <<
+    else if(message.includes('literature about')) {
         window.open(`https://eric.ed.gov/?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is the related literature i found about" + message + "in eric";
 	    speak(finalText);
     }
-    // search through eric about related studies
-     else if(message.includes('related studies about') || message.includes('rrs about')) {
+
+    // >> SEARCH THROUGH ERIC ABOUT LITERATED STUDIES <<
+     else if(message.includes('studies about')) {
         window.open(`https://eric.ed.gov/?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is the related studies i found about" + message + "in eric"; 
 	    speak(finalText);
@@ -171,10 +173,10 @@ function takeCommand(message){
         speak("Scan complete")
 
         const sentences = [
-            "You are happy",
-            "You are sad",
-            "You are angry",
-            "You are neutral"
+            "You are seem to be happy, based on my scanning receptors. i hope your happy for the whole day",
+            "You are neutral. looks like you are curios into something for now. maybe you are amaze of what i could do. dare to try my other features?",
+            "You seem to be energetic today. i hope more good things happen for you!",
+            "You look kinda tired. make sure to take a rest and treat yourself. you deserve it after all"
           ];
           
           // Function to get a random index from the array
