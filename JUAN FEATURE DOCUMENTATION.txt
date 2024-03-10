@@ -1,21 +1,51 @@
-
 JUAN FEATURES 
 
-CONVERSATIONAL MODULE
-OPEN WEBSITES
-SEARCH THRU CHROME 
-WIKIPEDIA
-GIVE RELATED LITERATURE
-GIVE RELATED STUDIES
-SCAN ME
-TIME 
+TIME
+>time, oras 
+
 DATE 
+>date, petsa
+
+OPEN WEBSITES
+open + = 
+>google
+>facebook
+>youtube
+>instagram
+>google meet
+>discord
+>twitter
+>gclassroom
+>chatgpt
+>shopee
+>lazada
+>pinterest
+>canva
+
+CONVERSATIONAL MODULE
+
+SEARCH THRU CHROME 
+>What is, Who is, What are, sino + the thing you want to search
+
+WIKIPEDIA 
+>wikipedia + the thing you want to search
+
+RELATED LITERATURE
+>give me related literature about
+RELATED STUDIES
+>give me related studies about
+
+SCAN ME
+>scan me
+
 WEATHER
+>give me weather satellite view 
+
 CALCULATOR
+>open calculator
 
 TO ADD
 
+FILIPINO HEROES TRIVIA
 FILIPINO PLACES TO VISIT
-FILIPINO WORD TRIVIA
 FILIPINO FOOD TRIVIA
-
