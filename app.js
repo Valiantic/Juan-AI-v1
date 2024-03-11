@@ -1,3 +1,6 @@
+
+
+
 //main brain of juan
 const btn = document.querySelector('.talk')
 const content = document.querySelector('.content')
@@ -79,7 +82,7 @@ function takeCommand(message){
           speak(greetings[randomIndex])
     }
     else if(message.includes("kumusta")  || message.includes("kamusta") || message.includes("how are you")){
-        const greetings = [
+        const kumusta = [
             "I'm doing good, thank you for asking. how about you? how are you doing lately?",
 
             "I'm doing great actually, i'm exploring the world wide web these days and i found " +
@@ -94,16 +97,16 @@ function takeCommand(message){
              return Math.floor(Math.random() * array.length);
            }
            
-           const randomIndex = getRandomIndex(greetings);
+           const randomIndex = getRandomIndex(kumusta);
            
-           speak(greetings[randomIndex])
+           speak(kumusta[randomIndex])
     }
     else if(message.includes("i'm fine")  || message.includes("goods lang") || message.includes("okay lang") || message.includes("i'm good")){ 
         speak("Good to hear that! just a friendly reminder that never push yourself too far and have a rest!")
     }
 
     else if(message.includes("i'm tired")  || message.includes("pagod")){ 
-        const greetings = [
+        const motivation = [
             "It must been hard for you these days. I don't know what you are going through now. but i hope you will be okay, " +
             "just keep on climbing heights. but make sure to take a rest. you deserve it after all",
 
@@ -120,9 +123,9 @@ function takeCommand(message){
              return Math.floor(Math.random() * array.length);
            }
            
-           const randomIndex = getRandomIndex(greetings);
+           const randomIndex = getRandomIndex(motivation);
            
-           speak(greetings[randomIndex])
+           speak(motivation[randomIndex])
     }
     else if(message.includes("thank you")  || message.includes("salamat")){ 
         speak("Your welcome, it's been a pleasure to help you. let me know if i can do something else.")
@@ -143,7 +146,7 @@ function takeCommand(message){
     else if(message.includes("tell me a joke")  || message.includes("magbiro")){ 
         speak("alright, here's a funny one.")
 
-        const greetings = [
+        const joke = [
             "Why is the calendar lucky? - Because it has many dates! ",
 
             "What does the doctor give a sick bird? - Tweetment!",
@@ -169,10 +172,68 @@ function takeCommand(message){
              return Math.floor(Math.random() * array.length);
            }
            
-           const randomIndex = getRandomIndex(greetings);
+           const randomIndex = getRandomIndex(joke);
            
-           speak(greetings[randomIndex])
+           speak(joke[randomIndex])
     }
+
+    else if(message.includes("filipino heroes trivia")){ 
+        speak("Did you know? The filipino hero")
+        
+        // 14 trivia about filipino heroes
+        const filipinoheroes = [
+            "Nicknamed 'The Fighting Chief,' Lapu-Lapu was not actually a king, but a chieftain of " +
+            "Mactan Island. He is most famous for defeating Ferdinand Magellan in the Battle of Mactan in 1521.",
+        
+            "Gabriela Silang: Married to Diego Silang, a revolutionary leader, Gabriela Silang took over his fight after his death. " +
+            "Nicknamed Joan of Arc of the Philippines, she is considered a pioneer for women in the Philippine Revolution.",
+        
+            "Melchora Aquino: Also known as Tandang Sora, she provided food and shelter to Katipuneros (revolutionaries) " +
+             "during the Philippine Revolution. Her house served as a refuge and a secret meeting place.",
+
+            "Jose Rizal: A national hero and polymath, Rizal was a physician, novelist, poet, and essayist. His novels, " + 
+            "Noli Me Tangere (Touch Me Not) and El Filibusterismo (The Subversive), exposed the corruption of Spanish colonial rule and inspired the Philippine Revolution",
+
+            "Andres Bonifacio: The Supremo of the Katipunan, a secret revolutionary society, " +
+            "Bonifacio led the uprising against Spanish rule in 1896. He is considered the Father of the Philippine Revolution",
+
+            "Emilio Aguinaldo: President of the revolutionary government established during the Philippine Revolution, " + 
+            "Aguinaldo declared the Philippines' independence from Spain in 1898. He later fought against the American occupation.",
+
+            "Apolinario Mabini: Known as The Brains of the Revolution, Mabini served as Prime Minister in Aguinaldo's revolutionary government. " +
+             "He was a brilliant lawyer and political theorist who advocated for Philippine independence.",
+
+            "Marcelo H. del Pilar: A propagandist during the Philippine Revolution, del Pilar used his pen name Plaridel to write scathing exposés " +
+            "of Spanish abuses in the Philippines. His works were published in Filipino newspapers.",
+
+            "Juan Luna: A renowned historical painter, Luna's masterpiece, The Spolarium, depicts the brutality of Spanish rule in the Philippines. " +
+            "The painting won a gold medal at the 1884 Madrid Exposition of Fine Arts.",
+
+            "Antonio Luna: A military strategist and brother of Juan Luna, Antonio Luna modernized the Philippine revolutionary army and played a " +
+            "key role in early victories against the Spanish. He was assassinated by political rivals.",
+
+            "Macario Sakay: A leader of the guerilla resistance against the American occupation, Sakay refused to surrender and continued fighting for Philippine independence. " +
+            "He was eventually captured and executed by the American forces.",
+
+            "Sultan Kudarat: A Muslim ruler in the 17th century, Sultan Kudarat resisted Spanish attempts to colonize Mindanao. He is known for his diplomatic skills and his " +
+            "leadership in unifying Muslim sultanates against the Spanish.",
+
+            "Gabriela Cruz: A World War II heroine, Cruz risked her life to spy on Japanese forces and helped American prisoners of war escape. She was captured and tortured by " + 
+            "the Japanese but never revealed any information.,",
+
+            "Jose Abad Santos: A Supreme Court Justice during World War II, Santos refused to collaborate with the Japanese occupation government. He continued to uphold the " + 
+            "Philippine Constitution and was executed for his defiance."
+           ];
+           
+           function getRandomIndex(array) {
+             return Math.floor(Math.random() * array.length);
+           }
+           
+           const randomIndex = getRandomIndex(filipinoheroes);
+           
+           speak(filipinoheroes[randomIndex])
+    }
+
 
     // >> OPEN WEBSITES <<
     else if(message.includes("open google")){
