@@ -234,6 +234,50 @@ function takeCommand(message){
            speak(filipinoheroes[randomIndex])
     }
 
+    else if(message.includes("places to visit") || message.includes("pwede pumunta") || message.includes("gumala")){ 
+        speak("Try visiting on")
+        
+        
+        const places = [
+                "Boracay Island, Aklan - Famous for its long stretch of white sand beach, Boracay offers a variety of water activities such " +
+                "as swimming, diving, snorkeling, and windsurfing. It also boasts vibrant nightlife and beachfront restaurants.",
+
+                "Intramuros, Manila - Intramuros is the walled city of Manila and is a popular tourist destination. " + 
+                "You can visit historical landmarks such as Fort Santiago, Casa Manila, and San Agustin Church, or simply wander around the cobblestone streets and soak up the atmosphere.",
+
+                "Taal Volcano, Batangas - Taal Volcano is one of the most active volcanoes in the Philippines and is a popular tourist destination. You can take a boat ride to Taal Island " + 
+                "and hike to the crater rim for a view of the volcano's lake.",
+
+                "Mayon Volcano, Albay - Mayon Volcano is known for its near-perfect conical shape and is considered one of the most beautiful volcanoes in the world. " +
+                "You can go on a trek to the volcano's base camp or simply admire it from afar.",
+
+                "People's Park in the Sky: Occupying the grounds of a never-finished presidential mansion, People's Park in the Sky offers panoramic views of Taal Volcano " +
+                "and Taal Lake. There are horseback riding, zip lines, and a restaurant on site.",
+
+                "Picnic Grove: A popular recreation area, Picnic Grove offers a variety of activities such as horseback riding, boating on the lake, zip lines, and a playground for children. " + 
+                "There are also several restaurants and shops located within the park.",
+
+                "Sky Ranch Tagaytay: An amusement park located in Tagaytay, Sky Ranch offers a variety of rides and attractions for all ages. Some of the rides include a Ferris wheel, a roller coaster, and a Viking ship.",
+
+                "Twin Lakes Shopping Village: This shopping complex is located on the shores of Taal Lake and offers a variety of shops, restaurants, and cafes. Visitors can also take a boat ride on the lake or go kayaking.",
+
+                "Puzzle Mansion: A unique attraction in Tagaytay, the Puzzle Mansion is a house built entirely out of jigsaw puzzle pieces. The mansion is filled with rooms decorated with different themes, such as a seashell room and a dollar bill room.",
+
+                "Binondo:  The oldest Chinatown in the world outside of China, Binondo is a vibrant district with a mix of Chinese and Filipino cultures.  Explore the maze-like streets lined with shops selling everything from Chinese herbs " + 
+                "and traditional crafts to  delicious Filipino and Chinese food."
+
+           ];
+           
+           function getRandomIndex(array) {
+             return Math.floor(Math.random() * array.length);
+           }
+           
+           const randomIndex = getRandomIndex(places);
+           
+           speak(places[randomIndex])
+    }
+
+
 
     // >> OPEN WEBSITES <<
     else if(message.includes("open google")){
