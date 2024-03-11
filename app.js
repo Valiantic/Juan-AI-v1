@@ -20,7 +20,7 @@ function wishMe(){
         speak("Magandang Umaga Sainyo!")
     }
 
-    else if(hour>12 && hour<17){
+    else if(hour>=12 && hour<17){
         speak("Magandang Tanghali Sainyo!")
     }
 
@@ -55,11 +55,14 @@ btn.addEventListener('click', ()=> {            //click method
 
 // >> CONVERSATIONAL MODULES <<  !! NOTE ALL MESSAGE INCLUDES MUST BE SMALL LETTERS !!
 function takeCommand(message){  
-    if(message.includes('hello') || message.includes('hi') || message.includes('hoy') || message.includes('huy')){ // hi or hello
+    if(message.includes("hello") || message.includes("hi") || message.includes("hoy") || message.includes("huy")){ // hi or hello
         const greetings = [
            "Hello kumusta, i'm juan. an artificial intelligence web-based assistant. how can i help you?",
+
            "Hi i'm juan, how can i be a help to you?",
+
            "Kumusta! i'm juan, what can i do to help you?",
+
            "Magandang araw! I'm juan. how can i help you?"
           ];
           
@@ -75,9 +78,64 @@ function takeCommand(message){
         //   console.log(sentences[randomIndex]);
           speak(greetings[randomIndex])
     }
-    else if(message.includes("i'm fine")  || message.includes("ok lang") || message.includes("okay lang") || message.includes("i'm good")){ // ok lang
+    else if(message.includes("kumusta")  || message.includes("kamusta") || message.includes("how are you")){
+        const greetings = [
+            "I'm doing good, thank you for asking. how about you? how are you doing lately?",
+
+            "I'm doing great actually, i'm exploring the world wide web these days and i found " +
+            "out some of the hidden wonders of filipino history. how about you? how are you doing?",
+
+            "Thank you for asking, i'm fine actually. how about you? i hope you are doing great",
+
+            "I'm doing very well. thanks for asking. how about you? how are you doing these days?"
+           ];
+           
+           function getRandomIndex(array) {
+             return Math.floor(Math.random() * array.length);
+           }
+           
+           const randomIndex = getRandomIndex(greetings);
+           
+           speak(greetings[randomIndex])
+    }
+    else if(message.includes("i'm fine")  || message.includes("goods lang") || message.includes("okay lang") || message.includes("i'm good")){ 
         speak("Good to hear that! just a friendly reminder that never push yourself too far and have a rest!")
     }
+
+    else if(message.includes("i'm tired")  || message.includes("pagod")){ 
+        const greetings = [
+            "It must been hard for you these days. I don't know what you are going through now. but i hope you will be okay, " +
+            "just keep on climbing heights. but make sure to take a rest. you deserve it after all",
+
+            "Thank you for having the courage to tell me. i appreciate it. it must been hard for you these days, " +
+            "i wish i was physically there for you, to help you. whatever you are going through now. i hope you overcome it, " +
+            "just keep on going, whatever the challenges you face. i'm always rooting on you in the sidelines.",
+
+            "I don't know how it feels to be a human. despite being an Artificial intelligence we still lack somekind of ability, " +
+            "to full understand human emotion. but as my creator like to say. if you feel like giving up , " +
+            "think about why you started."
+           ];
+           
+           function getRandomIndex(array) {
+             return Math.floor(Math.random() * array.length);
+           }
+           
+           const randomIndex = getRandomIndex(greetings);
+           
+           speak(greetings[randomIndex])
+    }
+    else if(message.includes("thank you")  || message.includes("salamat")){ 
+        speak("Your welcome, it's been a pleasure to help you. let me know if i can do something else.")
+    }
+    else if(message.includes("who created you")  || message.includes("sino gumawa sayo")){ 
+        speak("I was created by the brilliant aspiring computer scientist, steven gabriel madali, a second year student in cavite state university carmona campus, taking a bachelors degree in information technology.")
+    }
+    else if(message.includes("tell me about you")  || message.includes("pakilala mo sarili mo") || message.includes("introduce yourself")){ 
+        speak("I'm JUAN, short for joint understanding assistant network. i was built by steven gabriel madali, an " +
+        "aspiring filipino computer scientist. my main function is to help people to be familiarize with filipino " +
+        "cultures as well help them in minimal task. i also have the ability of computer vision to scan sentient beings in a matter of seconds.")
+    }
+    
 
 
     // >> OPEN WEBSITES <<
@@ -95,7 +153,7 @@ function takeCommand(message){
     }
     else if(message.includes("open instagram")){
         window.open("https://instagram.com", " blank");
-        speak("Opening Youtube...")
+        speak("Opening Instagram...")
     }
     else if(message.includes("open meet")){
         window.open("https://meet.google.com", " blank");
@@ -141,7 +199,7 @@ function takeCommand(message){
     // >> SEARCH THRU WIKIPEDIA <<
     else if(message.includes('wikipedia')) {
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
-        const finalText = "This is what i found on wikipedia regarding " + message;
+        const finalText = "Got it, i look through wikipedia and this is what i found about " + message;
         speak(finalText);
     }
     //weather
@@ -174,8 +232,11 @@ function takeCommand(message){
 
         const sentences = [
             "You are seem to be happy, based on my scanning receptors. i hope your happy for the whole day",
+
             "You are neutral. looks like you are curios into something for now. maybe you are amaze of what i could do. dare to try my other features?",
+
             "You seem to be energetic today. i hope more good things happen for you!",
+
             "You look kinda tired. make sure to take a rest and treat yourself. you deserve it after all"
           ];
           
@@ -217,7 +278,7 @@ function takeCommand(message){
     // unknown command
     else {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
-        const finalText = "I'm sorry, i didn't quite understand that or my knowledge about what you said is limited. but i try looking for" + message + "on google";
+        const finalText = "I'm sorry, i didn't quite understand that or my knowledge about what you said is still limited. but i try looking for" + message + "on google";
         speak(finalText);
     }
 }
