@@ -135,8 +135,44 @@ function takeCommand(message){
         "aspiring filipino computer scientist. my main function is to help people to be familiarize with filipino " +
         "cultures as well help them in minimal task. i also have the ability of computer vision to scan sentient beings in a matter of seconds.")
     }
-    
+    else if(message.includes("tell me about you")  || message.includes("pakilala mo sarili mo") || message.includes("introduce yourself")){ 
+        speak("I'm JUAN, short for joint understanding assistant network. i was built by steven gabriel madali, an " +
+        "aspiring filipino computer scientist. my main function is to help people to be familiarize with filipino " +
+        "cultures as well help them in minimal task. i also have the ability of computer vision to scan sentient beings in a matter of seconds.")
+    }
+    else if(message.includes("tell me a joke")  || message.includes("magbiro")){ 
+        speak("alright, here's a funny one.")
 
+        const greetings = [
+            "Why is the calendar lucky? - Because it has many dates! ",
+
+            "What does the doctor give a sick bird? - Tweetment!",
+
+            "What do you get from a pig who knows karate? - Pork chop! ",
+
+            "What do you call a fish that flys in the land? eeefish",
+
+            "What do you call a wood that flies? Plywood",
+
+            "How do you get a watermelon pregnant? You pakwan",
+
+            "Why is salt bad for you? Because it's a sin.",
+
+            "Why didn't the group of Filipinos enter the theater?  The sign on the door said pull",
+
+            "What did the ocean say to the beach? Nothing, it just waved.",
+
+            "What do you call a bear with no teeth? A gummy bear!"
+           ];
+           
+           function getRandomIndex(array) {
+             return Math.floor(Math.random() * array.length);
+           }
+           
+           const randomIndex = getRandomIndex(greetings);
+           
+           speak(greetings[randomIndex])
+    }
 
     // >> OPEN WEBSITES <<
     else if(message.includes("open google")){
