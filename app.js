@@ -138,10 +138,21 @@ function takeCommand(message){
         "aspiring filipino computer scientist. my main function is to help people to be familiarize with filipino " +
         "cultures as well help them in minimal task. i also have the ability of computer vision to scan sentient beings in a matter of seconds.")
     }
-    else if(message.includes("tell me about you")  || message.includes("pakilala mo sarili mo") || message.includes("introduce yourself")){ 
-        speak("I'm JUAN, short for joint understanding assistant network. i was built by steven gabriel madali, an " +
-        "aspiring filipino computer scientist. my main function is to help people to be familiarize with filipino " +
-        "cultures as well help them in minimal task. i also have the ability of computer vision to scan sentient beings in a matter of seconds.")
+    else if(message.includes("what can you do")  || message.includes("anong kaya mong gawin")){ 
+        speak("I can do many things like, i can tell you the date and time right now. open websites just by saying " +
+        "open, and the name of the website you want to open. i can search through chrome automatically. same goes to " +
+        "wikipedia. i can give you live weather satellite view as well give you releated literature and related studies " + 
+        "through ERIC for your research paper if you are making one. i can also tell you jokes that might brighten up your day, " +
+        "and my main function, to give filipino culture trivia  " +
+        "that can help you expand your learnings about the philippines. such as by saying the command filipino heroes trivia, or " +
+        "recommend you places to visit and food recommendation to eat in a daily basis just by saying food recommendation, " +
+        "I'm also supported with computer vision. meaning i can " +
+        "identify people in terms of their age and gender just by saying the command scan me.")
+    }
+    else if(message.includes("bye") || message.includes("paalam")){ 
+        speak("Goodbye thank you for using me! ")
+        window.close();
+
     }
     else if(message.includes("tell me a joke")  || message.includes("magbiro")){ 
         speak("alright, here's a funny one.")
