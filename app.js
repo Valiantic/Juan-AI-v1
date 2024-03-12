@@ -248,7 +248,7 @@ function takeCommand(message){
     else if(message.includes("places to visit") || message.includes("pwede pumunta") || message.includes("gumala")){ 
         speak("Try visiting on")
         
-        
+         // 10 places to visit
         const places = [
                 "Boracay Island, Aklan - Famous for its long stretch of white sand beach, Boracay offers a variety of water activities such " +
                 "as swimming, diving, snorkeling, and windsurfing. It also boasts vibrant nightlife and beachfront restaurants.",
@@ -287,6 +287,53 @@ function takeCommand(message){
            
            speak(places[randomIndex])
     }
+
+
+    else if(message.includes("food recommendation")){ 
+        speak("I would personally recommend you eating")
+        
+        const food = [
+              "Adobo: The National Dish of the Philippines. This savory dish is made with meat (chicken, pork, or seafood) marinated in soy sauce," + 
+              "vinegar, garlic, peppercorns, and bay leaves. It's a staple in Filipino cuisine and a must-try for any visitor. ",
+
+              "Sinigang: A Sour and Savory Soup. This dish features a sour broth, usually tamarind or guava, with meat (pork, beef, or seafood), " + 
+              "vegetables, and sometimes shrimp paste. It's a perfect balance of sour, savory, and salty flavors. ",
+
+              "Kare-Kare: Peanut Stew with Meat and Vegetables. A rich and hearty stew made with oxtail, tripe, or pork belly, kare-kare is slow-cooked " +
+              "in a peanut sauce with vegetables like eggplant, string beans, and banana blossoms. It's often served with bagoong (shrimp paste) on the side for an extra punch of umami. ",
+
+              "Pancit: Noodles with Meat and Vegetables. Pancit is a general term for noodle dishes in the Philippines, with many regional variations. Some popular types include pancit palabok " +
+              "(thick rice noodles in a shrimp sauce), pancit canton (stir-fried noodles with vegetables and meat), and pancit bihon (thin rice noodles with chicken or seafood). ", 
+
+              "Lumpia: Filipino Spring Rolls. These savory spring rolls are filled with a variety of ingredients, such as ground pork, shrimp, vegetables, or even spring rolls. They can " +
+              "be deep-fried or fresh, and are often served with a dipping sauce. ", 
+
+              "My creator's all time favorite. Sisig: A Must-Try for Adventurous Eaters. Sisig is a sizzling dish made with chopped pig's face and ears, onions, chilies, and calamansi " + 
+              "(a citrus fruit)",
+
+              "Kinilaw: Raw Seafood Salad. This refreshing dish features raw seafood (fish, shellfish) marinated in vinegar, citrus juice, ginger, and chilies. It's a great way " +
+              "to experience the fresh flavors of Philippine seafood. ",
+
+              "Tapsilog: The King of the Filipino Breakfast. This hearty breakfast dish features tapa (cured beef), fried rice, and a fried egg. It's a popular way to start the day " +
+              "and is often served with atchara (pickled vegetables) and vinegar. ",
+
+              "How about trying biko?. with its sticky rice cake is made with glutinous rice, coconut milk, and brown sugar." + 
+              "It's a popular dessert with a chewy texture and sweet flavor.", 
+
+              "Longanissa is a filipino sausage. typically made from pork and seasoned with garlic, pepper, and other spices." +
+              "It's often served for breakfast, fried and paired with eggs and rice."
+              
+           ];
+           
+           function getRandomIndex(array) {
+             return Math.floor(Math.random() * array.length);
+           }
+           
+           const randomIndex = getRandomIndex(food);
+           
+           speak(food[randomIndex])
+    }
+
 
 
 
