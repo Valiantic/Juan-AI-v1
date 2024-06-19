@@ -289,7 +289,7 @@ function takeCommand(message){
     }
 
 
-    else if(message.includes("food recommendation")){ 
+    else if(message.includes("food recommendation") || message.includes("what food could i eat") || message.includes("anong pwedeng kainin")){ 
         speak("I would personally recommend you eating")
         
         const food = [
@@ -389,7 +389,7 @@ function takeCommand(message){
 
 
     // >> SEARCH THRU CHROME <<
-    else if(message.includes('what is') || message.includes('who is') || message.includes('what are') || message.includes('sino')) {
+    else if(message.includes("what is")) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is what i found on internet regarding " + message;
 	    speak(finalText);
