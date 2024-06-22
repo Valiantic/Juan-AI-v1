@@ -337,7 +337,7 @@ function takeCommand(message){
 
     // CLARA CONVERSATION
 
-    else if(message.includes("say hello to clara")){
+    else if(message.includes("juan meet clara")){
         speak("Hello there clara! I'm juan an artificial intelligence assistant like you. designed to help humans on a daily basis")
     }
 
