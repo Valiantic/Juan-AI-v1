@@ -1,1 +1,1 @@
-General Academic Assistant A.I designed to teach students and people about filipino heroes, food and places trivia
+J.U.A.N is a General Academic Assistant A.I designed to teach students and people about filipino heroes, food and places trivia. he i also supported with computer vision that enables him to identify the age and gender of a certain person.
